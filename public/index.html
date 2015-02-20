@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HILO Weather</title>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="vendor/weather-icons/css/weather-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <section class="city-select">
+      <select class="cs-select cs-skin-border">
+        <option value="" disabled selected>Select a city</option>
+        <option value="HNL">Honolulu, HI</option>
+        <option value="SFO">San Francisco, CA</option>
+        <option value="JFK">New York, NY</option>
+      </select>
+    </section>
+
+    <section class="current">
+      
+    </section>
+  </div>
+
+  <script src="vendor/jquery/dist/jquery.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/selectFx.js"></script>
+  <script>
+    (function() {
+      [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+        new SelectFx(el);
+      } );
+    })();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>
