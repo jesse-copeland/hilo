@@ -11,16 +11,40 @@
   <div class="container">
     <section class="city-select">
       <select class="cs-select cs-skin-border">
-        <option value="" disabled selected>Select a city</option>
-        <option value="HNL">Honolulu, HI</option>
-        <option value="SFO">San Francisco, CA</option>
-        <option value="JFK">New York, NY</option>
+        <option value="" disabled selected>Select an airport</option>
+        <option value="HNL">HNL</option>
+        <option value="SFO">SFO</option>
+        <option value="JFK">JFK</option>
       </select>
     </section>
 
-    <section class="current">
-      
+    <section class="thermometer">
+      <div class="record-info record-lows">
+        <h2>historic low</h2>
+        <div class="weather-icon wi wi-snowflake-cold"></div>
+        <div class="temp-label"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+        <h3>YYYY</h3>
+      </div>
+      <div class="thermometer-wrapper">
+        <div class="thermometer-scale">
+          <div class="ther-marker top-marker">
+            <h3>Current</h3>
+            <div class="temp-label current-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+          </div>
+          <div class="ther-marker bottom-marker">
+            <div class="temp-label normal-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+            <h3>Normal</h3>
+          </div>
+        </div>
+      </div>
+      <div class="record-info record-highs">
+        <h2>historic high</h2>
+        <div class="weather-icon wi wi-hot"></div>
+        <div class="temp-label"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+        <h3>YYYY</h3>
+      </div>
     </section>
+
   </div>
 
   <script src="vendor/jquery/dist/jquery.js"></script>

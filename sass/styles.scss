@@ -118,7 +118,7 @@ div.cs-active {
 }
 
 div.cs-skin-border {
-  background: transparent;
+  // background: transparent;
   font-size: 2em;
   font-weight: 700;
   max-width: 600px;
@@ -189,13 +189,179 @@ div.cs-skin-border {
 
 /* Custom Styles */
 
+html {
+  background: url(../images/shattered.png);
+}
+
 .container {
-  max-width: 600px;
-  margin: 0 auto;
+  width: 680px;
+  padding: 40px 30px 0;
 }
 
 .current {
   margin-top: 50px;
-  height: 100px;
+  height: 200px;
   border: 5px solid #000;
+  text-align: center;
+}
+
+.temp {
+
+  // &:after {
+  //   content: "°<span>F</span>";
+  // }
+}
+
+.thermometer {
+  width: 600px;
+  height: 270px;
+  margin-top: 50px;
+  // border: 5px solid #000;
+
+  .record-lows {
+    height: 260px;
+    width: 130px;
+    border: 5px solid #000;
+    border-radius: 10px;
+    float: left;
+    background: #fff;
+  }
+
+  .record-highs {
+    height: 260px;
+    width: 130px;
+    border: 5px solid #000;
+    border-radius: 10px;
+    float: left;
+    background: #fff;
+  }
+
+  .record-info {
+    text-align: center;
+
+    .temp-label {
+      margin-top: 5px;
+      
+      .temp-val {
+        font-size: 3.2em;
+      }
+
+      i {
+        font-size: 3.2em;
+      }
+    }
+    h2 {
+      background: #000;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    h3 {
+      font-size: 2em;
+      margin: 15px 0 0;
+    }
+  }
+
+  .weather-icon {
+    width: 130px;
+    height: 100px;
+    font-size: 80px;
+    margin: auto;
+    text-align: center;
+    // padding-top: 20px;
+
+    &.wi {
+      line-height: initial;
+    }
+  }
+
+  .thermometer-wrapper {
+    width: 320px;
+    float: left;
+
+    
+    .thermometer-scale {
+      position: relative;
+      border-bottom: 5px solid #000;
+      width: 320px;
+      height: 135px;
+      display: inline-block;
+
+      .current-temp, .normal-temp {
+        
+      }
+
+      .ther-marker {
+        position: absolute;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border: 5px solid #000;
+        border-radius: 99999px;
+        text-align: center;
+        background: #fff;
+
+        .temp-label {
+          font-size: 2em;
+          padding-top: 25px;
+
+          .deg {
+            font-size: 0.8em;
+            vertical-align: top;
+          }
+
+          .temp-unit {
+            font-size: 0.5em;
+            vertical-align: top;
+          }
+        }
+
+        &.top-marker {
+          left: 120px;
+          bottom: 20px;
+
+          &:after {
+            content: " ";
+            position: absolute;
+            bottom: -25px;
+            height: 20px;
+            border: 2.5px solid #000;
+          }
+
+          h3 {
+            position: absolute;
+            top: -40px;
+            text-transform: uppercase;
+            font-size: 1em;
+            text-align: center;
+          }
+
+        }
+
+        &.bottom-marker {
+          left: 120px;
+          bottom: -115px;
+
+          &:after {
+            content: " ";
+            position: absolute;
+            top: -25px;
+            height: 20px;
+            border: 2.5px solid #000;
+          }
+
+          h3 {
+            position: absolute;
+            bottom: -40px;
+            text-transform: uppercase;
+            font-size: 1em;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }

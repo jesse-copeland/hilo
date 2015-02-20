@@ -97,7 +97,6 @@ div.cs-active {
   font-style: normal; }
 
 div.cs-skin-border {
-  background: transparent;
   font-size: 2em;
   font-weight: 700;
   max-width: 600px; }
@@ -154,11 +153,117 @@ div.cs-skin-border {
   background: #f5f3ec; }
 
 /* Custom Styles */
+html {
+  background: url(../images/shattered.png); }
+
 .container {
-  max-width: 600px;
-  margin: 0 auto; }
+  width: 680px;
+  padding: 40px 30px 0; }
 
 .current {
   margin-top: 50px;
-  height: 100px;
-  border: 5px solid #000; }
+  height: 200px;
+  border: 5px solid #000;
+  text-align: center; }
+
+.thermometer {
+  width: 600px;
+  height: 270px;
+  margin-top: 50px; }
+  .thermometer .record-lows {
+    height: 260px;
+    width: 130px;
+    border: 5px solid #000;
+    border-radius: 10px;
+    float: left;
+    background: #fff; }
+  .thermometer .record-highs {
+    height: 260px;
+    width: 130px;
+    border: 5px solid #000;
+    border-radius: 10px;
+    float: left;
+    background: #fff; }
+  .thermometer .record-info {
+    text-align: center; }
+    .thermometer .record-info .temp-label {
+      margin-top: 5px; }
+      .thermometer .record-info .temp-label .temp-val {
+        font-size: 3.2em; }
+      .thermometer .record-info .temp-label i {
+        font-size: 3.2em; }
+    .thermometer .record-info h2 {
+      background: #000;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      margin: 0;
+      padding: 10px 0; }
+    .thermometer .record-info h3 {
+      font-size: 2em;
+      margin: 15px 0 0; }
+  .thermometer .weather-icon {
+    width: 130px;
+    height: 100px;
+    font-size: 80px;
+    margin: auto;
+    text-align: center; }
+    .thermometer .weather-icon.wi {
+      line-height: initial; }
+  .thermometer .thermometer-wrapper {
+    width: 320px;
+    float: left; }
+    .thermometer .thermometer-wrapper .thermometer-scale {
+      position: relative;
+      border-bottom: 5px solid #000;
+      width: 320px;
+      height: 135px;
+      display: inline-block; }
+      .thermometer .thermometer-wrapper .thermometer-scale .ther-marker {
+        position: absolute;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border: 5px solid #000;
+        border-radius: 99999px;
+        text-align: center;
+        background: #fff; }
+        .thermometer .thermometer-wrapper .thermometer-scale .ther-marker .temp-label {
+          font-size: 2em;
+          padding-top: 25px; }
+          .thermometer .thermometer-wrapper .thermometer-scale .ther-marker .temp-label .deg {
+            font-size: 0.8em;
+            vertical-align: top; }
+          .thermometer .thermometer-wrapper .thermometer-scale .ther-marker .temp-label .temp-unit {
+            font-size: 0.5em;
+            vertical-align: top; }
+        .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.top-marker {
+          left: 120px;
+          bottom: 20px; }
+          .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.top-marker:after {
+            content: " ";
+            position: absolute;
+            bottom: -25px;
+            height: 20px;
+            border: 2.5px solid #000; }
+          .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.top-marker h3 {
+            position: absolute;
+            top: -40px;
+            text-transform: uppercase;
+            font-size: 1em;
+            text-align: center; }
+        .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.bottom-marker {
+          left: 120px;
+          bottom: -115px; }
+          .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.bottom-marker:after {
+            content: " ";
+            position: absolute;
+            top: -25px;
+            height: 20px;
+            border: 2.5px solid #000; }
+          .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.bottom-marker h3 {
+            position: absolute;
+            bottom: -40px;
+            text-transform: uppercase;
+            font-size: 1em;
+            text-align: center; }
