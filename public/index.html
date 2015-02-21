@@ -13,13 +13,23 @@
       <select class="cs-select cs-skin-border">
         <option value="" disabled selected>Select an airport</option>
         <option value="HNL">HNL</option>
+        <option value="NRT">NRT</option>
+        <option value="LIM">LIM</option>
         <option value="SFO">SFO</option>
         <option value="JFK">JFK</option>
+        <option value="MCI">MCI</option>
+        <option value="DEN">DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="ANC">ANC</option>
+        <option value="HOU">HOU</option>
+        <option value="BGR">BGR</option>
+        <option value="SEA">SEA</option>
       </select>
     </section>
 
     <section class="thermometer">
-      <div class="record-info record-lows">
+      <h1 class="city">test city</h1>
+      <div class="record-info record-low">
         <h2>historic low</h2>
         <div class="weather-icon wi wi-snowflake-cold"></div>
         <div class="temp-label"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
@@ -28,16 +38,17 @@
       <div class="thermometer-wrapper">
         <div class="thermometer-scale">
           <div class="ther-marker top-marker">
-            <h3>Current</h3>
-            <div class="temp-label current-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+            <div class="temp-label normal-high-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
           </div>
           <div class="ther-marker bottom-marker">
-            <div class="temp-label normal-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
-            <h3>Normal</h3>
+            <div class="temp-label normal-low-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+          </div>
+          <div class="ther-marker center-marker">
+            <div class="temp-label current-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
           </div>
         </div>
       </div>
-      <div class="record-info record-highs">
+      <div class="record-info record-high">
         <h2>historic high</h2>
         <div class="weather-icon wi wi-hot"></div>
         <div class="temp-label"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>

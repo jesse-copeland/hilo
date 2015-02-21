@@ -168,16 +168,20 @@ html {
 
 .thermometer {
   width: 600px;
-  height: 270px;
-  margin-top: 50px; }
-  .thermometer .record-lows {
+  height: 270px; }
+  .thermometer .city {
+    padding: 15px 0;
+    background: #fff;
+    text-align: center;
+    border: 5px solid #000; }
+  .thermometer .record-low {
     height: 260px;
     width: 130px;
     border: 5px solid #000;
     border-radius: 10px;
     float: left;
     background: #fff; }
-  .thermometer .record-highs {
+  .thermometer .record-high {
     height: 260px;
     width: 130px;
     border: 5px solid #000;
@@ -217,7 +221,7 @@ html {
       position: relative;
       border-bottom: 5px solid #000;
       width: 320px;
-      height: 135px;
+      height: 130px;
       display: inline-block; }
       .thermometer .thermometer-wrapper .thermometer-scale .ther-marker {
         position: absolute;
@@ -239,12 +243,14 @@ html {
             vertical-align: top; }
         .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.top-marker {
           left: 120px;
-          bottom: 20px; }
+          bottom: 40px;
+          -webkit-transition: left 1s;
+          transition: left 1s; }
           .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.top-marker:after {
             content: " ";
             position: absolute;
-            bottom: -25px;
-            height: 20px;
+            bottom: -50px;
+            height: 45px;
             border: 2.5px solid #000; }
           .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.top-marker h3 {
             position: absolute;
@@ -254,12 +260,14 @@ html {
             text-align: center; }
         .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.bottom-marker {
           left: 120px;
-          bottom: -115px; }
+          bottom: -140px;
+          -webkit-transition: left 1s;
+          transition: left 1s; }
           .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.bottom-marker:after {
             content: " ";
             position: absolute;
-            top: -25px;
-            height: 20px;
+            top: -50px;
+            height: 45px;
             border: 2.5px solid #000; }
           .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.bottom-marker h3 {
             position: absolute;
@@ -267,3 +275,8 @@ html {
             text-transform: uppercase;
             font-size: 1em;
             text-align: center; }
+        .thermometer .thermometer-wrapper .thermometer-scale .ther-marker.center-marker {
+          left: 120px;
+          bottom: -50px;
+          -webkit-transition: left 1s;
+          transition: left 1s; }

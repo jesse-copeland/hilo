@@ -49,14 +49,58 @@ function attachAttributes ($el, weatherData, callback) {
   callback($el);
 }
 
-function render ($element) {
-  $element.find('h1').text($element.data('weatherData').city);
-  $element.find('figure').text($element.data('weatherData').currentTemp);
+function calcScalePos (elemVal, scaleArray) {
 
+  var offset = elemVal - scaleArray[0];
+  var tempRange = scaleArray[1] - scaleArray[0];
+  var currentPerc =  offset / tempRange;
+  var position = scaleArray[2] * currentPerc;
+  return position;
+}
+
+function render ($element) {
+
+  var cityData = $element.data('weatherData').city;
+  var currentTempData = $element.data('weatherData').currentTemp;
+  var highTempNormalData = $element.data('weatherData').highTempNormal;
+  var highTempRecordData = $element.data('weatherData').highTempRecord;
+  var highTempYearData = $element.data('weatherData').highTempYear;
+  var lowTempNormalData = $element.data('weatherData').lowTempNormal;
+  var lowTempRecordData = $element.data('weatherData').lowTempRecord;
+  var lowTempYearData = $element.data('weatherData').lowTempYear;
+
+  var cityEl = $element.find('.city');
+  var currentTempEl = $element.find('.current-temp .temp-val');
+  var highTempNormalEl = $element.find('.normal-high-temp .temp-val');
+  var highTempRecordEl = $element.find('.record-high .temp-val');
+  var highTempYearEl = $element.find('.record-high h3');
+  var lowTempNormalEl = $element.find('.normal-low-temp .temp-val');
+  var lowTempRecordEl = $element.find('.record-low .temp-val');
+  var lowTempYearEl = $element.find('.record-low h3');
+
+  cityEl.text(cityData);
+  currentTempEl.text(currentTempData);
+  highTempNormalEl.text(highTempNormalData);
+  highTempRecordEl.text(highTempRecordData);
+  highTempYearEl.text(highTempYearData);
+  lowTempNormalEl.text(lowTempNormalData);
+  lowTempRecordEl.text(lowTempRecordData);
+  lowTempYearEl.text(lowTempYearData);
+
+  var scaleArray = [lowTempRecordData, highTempRecordData, 230];
+
+  var markerHighPosEl = $('.ther-marker.top-marker');
+  var markerCurrentPosEl = $('.ther-marker.center-marker');
+  var markerLowPosEl = $('.ther-marker.bottom-marker');
+
+  markerHighPosEl.css('left', calcScalePos(highTempNormalData, scaleArray)); 
+  markerCurrentPosEl.css('left', calcScalePos(currentTempData, scaleArray)); 
+  markerLowPosEl.css('left', calcScalePos(lowTempNormalData, scaleArray)); 
+          
 }
 
 $(function () {
-  var locationElement = $('main.weather');
+  var thermElement = $('.thermometer');
   var location = new Location();
   var citySelects = $('.city-select .cs-options');
   var selectedAirport;
@@ -64,7 +108,7 @@ $(function () {
     citySelects.on('click', 'li', function () {
       selectedAirport = $(this).data('value');
       location.fetchWeatherData(selectedAirport, function (location) {
-        attachAttributes(locationElement, location, function ($element) {
+        attachAttributes(thermElement, location, function ($element) {
           render($element);
         });
       });

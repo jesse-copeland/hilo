@@ -215,10 +215,16 @@ html {
 .thermometer {
   width: 600px;
   height: 270px;
-  margin-top: 50px;
-  // border: 5px solid #000;
+  // margin-top: 50px;
 
-  .record-lows {
+  .city {
+    padding: 15px 0;
+    background: #fff;
+    text-align: center;
+    border: 5px solid #000;
+  }
+
+  .record-low {
     height: 260px;
     width: 130px;
     border: 5px solid #000;
@@ -227,7 +233,7 @@ html {
     background: #fff;
   }
 
-  .record-highs {
+  .record-high {
     height: 260px;
     width: 130px;
     border: 5px solid #000;
@@ -287,7 +293,7 @@ html {
       position: relative;
       border-bottom: 5px solid #000;
       width: 320px;
-      height: 135px;
+      height: 130px;
       display: inline-block;
 
       .current-temp, .normal-temp {
@@ -321,13 +327,16 @@ html {
 
         &.top-marker {
           left: 120px;
-          bottom: 20px;
+          bottom: 40px;
+
+          -webkit-transition: left 1s;
+          transition: left 1s;
 
           &:after {
             content: " ";
             position: absolute;
-            bottom: -25px;
-            height: 20px;
+            bottom: -50px;
+            height: 45px;
             border: 2.5px solid #000;
           }
 
@@ -343,13 +352,16 @@ html {
 
         &.bottom-marker {
           left: 120px;
-          bottom: -115px;
+          bottom: -140px;
+
+          -webkit-transition: left 1s;
+          transition: left 1s;
 
           &:after {
             content: " ";
             position: absolute;
-            top: -25px;
-            height: 20px;
+            top: -50px;
+            height: 45px;
             border: 2.5px solid #000;
           }
 
@@ -360,6 +372,14 @@ html {
             font-size: 1em;
             text-align: center;
           }
+        }
+
+        &.center-marker {
+          left: 120px;
+          bottom: -50px;
+
+          -webkit-transition: left 1s;
+          transition: left 1s;
         }
       }
     }
