@@ -58,16 +58,53 @@ function calcScalePos (elemVal, scaleArray) {
   return position;
 }
 
+function initialize ($element) {
+  var cityEl = $element.find('.city');
+  var currentTempEl = $element.find('.current-temp .temp-val');
+  var highTempNormalEl = $element.find('.normal-high-temp .temp-val');
+  var highTempRecordEl = $element.find('.record-high .temp-val');
+  var highTempYearEl = $element.find('.record-high h3');
+  var lowTempNormalEl = $element.find('.normal-low-temp .temp-val');
+  var lowTempRecordEl = $element.find('.record-low .temp-val');
+  var lowTempYearEl = $element.find('.record-low h3');
+  var showData = $('#show-data-contents');
+  var markerHighPosEl = $('.ther-marker.top-marker');
+  var markerCurrentPosEl = $('.ther-marker.center-marker');
+  var markerLowPosEl = $('.ther-marker.bottom-marker');
+
+  $('.cs-selected').removeClass();
+  $('.cs-placeholder').text('Select an airport');
+
+  cityEl.text('');
+  currentTempEl.text('');
+  highTempNormalEl.text('');
+  highTempRecordEl.text('');
+  highTempYearEl.text('YYYY');
+  lowTempNormalEl.text('');
+  lowTempRecordEl.text('');
+  lowTempYearEl.text('YYYY');
+  showData.text('');
+  showData.slideUp();
+
+  markerHighPosEl.css('left', 120); 
+  markerCurrentPosEl.css('left', 120); 
+  markerLowPosEl.css('left', 120); 
+  cityEl.slideUp();
+
+  
+}
+
 function render ($element) {
 
-  var cityData = $element.data('weatherData').city;
-  var currentTempData = $element.data('weatherData').currentTemp;
-  var highTempNormalData = $element.data('weatherData').highTempNormal;
-  var highTempRecordData = $element.data('weatherData').highTempRecord;
-  var highTempYearData = $element.data('weatherData').highTempYear;
-  var lowTempNormalData = $element.data('weatherData').lowTempNormal;
-  var lowTempRecordData = $element.data('weatherData').lowTempRecord;
-  var lowTempYearData = $element.data('weatherData').lowTempYear;
+  var weatherData = $element.data('weatherData');
+  var cityData = weatherData.city;
+  var currentTempData = weatherData.currentTemp;
+  var highTempNormalData = weatherData.highTempNormal;
+  var highTempRecordData = weatherData.highTempRecord;
+  var highTempYearData = weatherData.highTempYear;
+  var lowTempNormalData = weatherData.lowTempNormal;
+  var lowTempRecordData = weatherData.lowTempRecord;
+  var lowTempYearData = weatherData.lowTempYear;
 
   var cityEl = $element.find('.city');
   var currentTempEl = $element.find('.current-temp .temp-val');
@@ -77,6 +114,7 @@ function render ($element) {
   var lowTempNormalEl = $element.find('.normal-low-temp .temp-val');
   var lowTempRecordEl = $element.find('.record-low .temp-val');
   var lowTempYearEl = $element.find('.record-low h3');
+  var showData = $('#show-data-contents');
 
   cityEl.text(cityData);
   currentTempEl.text(currentTempData);
@@ -86,6 +124,8 @@ function render ($element) {
   lowTempNormalEl.text(lowTempNormalData);
   lowTempRecordEl.text(lowTempRecordData);
   lowTempYearEl.text(lowTempYearData);
+  showData.text("$('.thermometer').data('weatherData')\n" + dataToString($element.data('weatherData')));
+  showData.slideDown();
 
   var scaleArray = [lowTempRecordData, highTempRecordData, 230];
 
@@ -97,12 +137,29 @@ function render ($element) {
   markerCurrentPosEl.css('left', calcScalePos(currentTempData, scaleArray)); 
   markerLowPosEl.css('left', calcScalePos(lowTempNormalData, scaleArray)); 
   cityEl.slideDown();
+
+
           
+}
+
+function dataToString (dataObj) {
+  var keyVals = [];
+  var dataString = '';
+
+  for (var key in dataObj) {
+    if (dataObj.hasOwnProperty(key)) {
+      keyVals.push(key + ': ' + dataObj[key]);
+    }
+  }
+  dataString = keyVals.join(',\n');
+
+  return dataString;
 }
 
 $(function () {
   var thermElement = $('.thermometer');
   thermElement.find('h1.city').hide();
+  thermElement.find('#show-data-contents').hide();
   var location = new Location();
   var citySelects = $('.city-select .cs-options');
   var resetButton = $('.reset');
@@ -125,6 +182,7 @@ $(function () {
       } else {
         console.log('No data to remove');
       }
+      initialize(thermElement);
     });
 
 }); //end jQuery function

@@ -297,8 +297,13 @@ html {
       height: 130px;
       display: inline-block;
 
-      .current-temp, .normal-temp {
-        
+      .marker-label {
+        text-align: center;
+        padding: 25px 0;
+        font-size: 3em;
+        color: rgba(0,0,0,.4);
+        text-transform: uppercase;
+        font-family: monospace;
       }
 
       .ther-marker {
@@ -309,7 +314,7 @@ html {
         border: 5px solid #000;
         border-radius: 99999px;
         text-align: center;
-        background: #fff;
+        background: rgba(255,255,255,.7);
 
         .temp-label {
           font-size: 2em;
