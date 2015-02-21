@@ -157,7 +157,7 @@ html {
   background: url(../images/shattered.png); }
 
 .container {
-  width: 680px;
+  width: 600px;
   padding: 40px 30px 0; }
 
 .current {
@@ -168,12 +168,14 @@ html {
 
 .thermometer {
   width: 600px;
-  height: 270px; }
+  height: 270px;
+  margin-top: 20px; }
   .thermometer .city {
     padding: 15px 0;
     background: #fff;
     text-align: center;
-    border: 5px solid #000; }
+    border: 5px solid #000;
+    margin-top: 0; }
   .thermometer .record-low {
     height: 260px;
     width: 130px;
@@ -280,3 +282,37 @@ html {
           bottom: -50px;
           -webkit-transition: left 1s;
           transition: left 1s; }
+  .thermometer .bottom-row {
+    padding-top: 20px; }
+    .thermometer .bottom-row textarea {
+      border: 5px solid #4F4F4F;
+      border-radius: 8px; }
+    .thermometer .bottom-row .reset {
+      float: right;
+      height: 50px;
+      width: 50px;
+      background: #ddd;
+      border: 3px solid #4F4F4F;
+      border-radius: 8px;
+      color: #4F4F4F;
+      text-align: center; }
+      .thermometer .bottom-row .reset:hover {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg); }
+      .thermometer .bottom-row .reset:active {
+        background: #4F4F4F;
+        color: #ddd; }
+        .thermometer .bottom-row .reset:active i {
+          transform: rotate(1turn); }
+      .thermometer .bottom-row .reset i {
+        font-size: 4em;
+        line-height: 50px;
+        transition: transform 0.3s; }
+
+.clearfix:after {
+  content: " ";
+  /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }

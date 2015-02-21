@@ -16,6 +16,7 @@
         <option value="NRT">NRT</option>
         <option value="LIM">LIM</option>
         <option value="SFO">SFO</option>
+        <option value="SMF">SMF</option>
         <option value="JFK">JFK</option>
         <option value="MCI">MCI</option>
         <option value="DEN">DEN</option>
@@ -28,31 +29,37 @@
     </section>
 
     <section class="thermometer">
-      <h1 class="city">test city</h1>
+      <h1 class="city"></h1>
       <div class="record-info record-low">
         <h2>historic low</h2>
         <div class="weather-icon wi wi-snowflake-cold"></div>
         <div class="temp-label"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
         <h3>YYYY</h3>
       </div>
-      <div class="thermometer-wrapper">
-        <div class="thermometer-scale">
-          <div class="ther-marker top-marker">
-            <div class="temp-label normal-high-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
-          </div>
-          <div class="ther-marker bottom-marker">
-            <div class="temp-label normal-low-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
-          </div>
-          <div class="ther-marker center-marker">
-            <div class="temp-label current-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+      <div class="thermometer-components clearfix">
+        <div class="thermometer-wrapper">
+          <div class="thermometer-scale">
+            <div class="ther-marker top-marker">
+              <div class="temp-label normal-high-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+            </div>
+            <div class="ther-marker bottom-marker">
+              <div class="temp-label normal-low-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+            </div>
+            <div class="ther-marker center-marker">
+              <div class="temp-label current-temp"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+            </div>
           </div>
         </div>
+        <div class="record-info record-high">
+          <h2>historic high</h2>
+          <div class="weather-icon wi wi-hot"></div>
+          <div class="temp-label"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
+          <h3>YYYY</h3>
+        </div>
       </div>
-      <div class="record-info record-high">
-        <h2>historic high</h2>
-        <div class="weather-icon wi wi-hot"></div>
-        <div class="temp-label"><span class="temp-val"></span><i class="wi wi-fahrenheit"></i></div>
-        <h3>YYYY</h3>
+      <div class="bottom-row">
+        <textarea name="show-data-contents" id="show-data-contents" cols="30" rows="10"></textarea>
+        <div class="reset"><i class="wi wi-refresh"></i></div>
       </div>
     </section>
 

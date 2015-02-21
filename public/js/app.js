@@ -96,13 +96,16 @@ function render ($element) {
   markerHighPosEl.css('left', calcScalePos(highTempNormalData, scaleArray)); 
   markerCurrentPosEl.css('left', calcScalePos(currentTempData, scaleArray)); 
   markerLowPosEl.css('left', calcScalePos(lowTempNormalData, scaleArray)); 
+  cityEl.slideDown();
           
 }
 
 $(function () {
   var thermElement = $('.thermometer');
+  thermElement.find('h1.city').hide();
   var location = new Location();
   var citySelects = $('.city-select .cs-options');
+  var resetButton = $('.reset');
   var selectedAirport;
     
     citySelects.on('click', 'li', function () {
@@ -112,6 +115,16 @@ $(function () {
           render($element);
         });
       });
+    });
+
+    resetButton.click(function () {
+      var checkTherm = $('.thermometer')[0];
+      if ($.hasData(checkTherm)) {
+        thermElement.removeData('weatherData');
+        console.log('Data removed: weatherData');
+      } else {
+        console.log('No data to remove');
+      }
     });
 
 }); //end jQuery function
