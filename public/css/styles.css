@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+body {
+  font-family: 'Raleway', Helvetica, Arial, sans-serif; }
+
 /* Default custom select styles */
 div.cs-select {
   display: inline-block;
@@ -26,7 +30,7 @@ div.cs-select:focus {
   display: block;
   position: relative;
   cursor: pointer;
-  padding: 1em;
+  padding: 0.5em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -175,6 +179,7 @@ html {
     background: #fff;
     text-align: center;
     border: 5px solid #000;
+    border-radius: 10px;
     margin-top: 0; }
   .thermometer .record-low {
     height: 260px;
@@ -230,10 +235,9 @@ html {
         width: 320px;
         text-align: center;
         padding: 25px 0;
-        font-size: 3.01em;
+        font-size: 2.1em;
         color: rgba(0, 0, 0, 0.4);
         text-transform: uppercase;
-        font-family: monospace;
         z-index: 1;
         background: white;
         -webkit-transition: background 0.5s, z-index 0.5s;
@@ -309,7 +313,8 @@ html {
     padding-top: 20px; }
     .thermometer .bottom-row textarea {
       border: 5px solid #4F4F4F;
-      border-radius: 8px; }
+      border-radius: 8px;
+      font-size: 1.4em; }
     .thermometer .bottom-row .reset {
       float: right;
       height: 50px;
