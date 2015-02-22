@@ -195,7 +195,7 @@ html {
 
 .container {
   width: 600px;
-  padding: 40px 30px 0;
+  padding: 10px 10px 0;
 }
 
 .current {
@@ -203,13 +203,6 @@ html {
   height: 200px;
   border: 5px solid #000;
   text-align: center;
-}
-
-.temp {
-
-  // &:after {
-  //   content: "°<span>F</span>";
-  // }
 }
 
 .thermometer {
@@ -278,7 +271,6 @@ html {
     font-size: 80px;
     margin: auto;
     text-align: center;
-    // padding-top: 20px;
 
     &.wi {
       line-height: initial;
@@ -298,12 +290,35 @@ html {
       display: inline-block;
 
       .marker-label {
+        position: absolute;
+        width: 320px;
         text-align: center;
         padding: 25px 0;
-        font-size: 3em;
+        font-size: 3.01em;
         color: rgba(0,0,0,.4);
         text-transform: uppercase;
         font-family: monospace;
+        z-index: 1;
+        background: rgba(255,255,255,1);
+
+        -webkit-transition: background 0.5s, z-index 0.5s;
+                transition: background 0.5s, z-index 0.5s;
+
+        &.marker-label-top {
+          top: 0;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+
+        }
+        &.marker-label-middle {
+          top: 90px;
+        }
+        &.marker-label-bottom {
+          top: 180px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+        
       }
 
       .ther-marker {
@@ -314,11 +329,11 @@ html {
         border: 5px solid #000;
         border-radius: 99999px;
         text-align: center;
-        background: rgba(255,255,255,.7);
+        background: rgba(255,255,255,1);
 
         .temp-label {
-          font-size: 2em;
-          padding-top: 25px;
+          font-size: 1.9em;
+          padding-top: 23px;
 
           .deg {
             font-size: 0.8em;

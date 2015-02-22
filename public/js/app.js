@@ -71,6 +71,8 @@ function initialize ($element) {
   var markerHighPosEl = $('.ther-marker.top-marker');
   var markerCurrentPosEl = $('.ther-marker.center-marker');
   var markerLowPosEl = $('.ther-marker.bottom-marker');
+  var markerLabel = $('.marker-label');
+  
 
   $('.cs-selected').removeClass();
   $('.cs-placeholder').text('Select an airport');
@@ -84,11 +86,12 @@ function initialize ($element) {
   lowTempRecordEl.text('');
   lowTempYearEl.text('YYYY');
   showData.text('');
-  showData.slideUp();
+  // showData.slideUp();
 
   markerHighPosEl.css('left', 120); 
   markerCurrentPosEl.css('left', 120); 
   markerLowPosEl.css('left', 120); 
+  markerLabel.css({"background": "rgba(255,255,255,1)", "z-index": "1"});
   cityEl.slideUp();
 
   
@@ -125,14 +128,16 @@ function render ($element) {
   lowTempRecordEl.text(lowTempRecordData);
   lowTempYearEl.text(lowTempYearData);
   showData.text("$('.thermometer').data('weatherData')\n" + dataToString($element.data('weatherData')));
-  showData.slideDown();
+  // showData.slideDown();
 
   var scaleArray = [lowTempRecordData, highTempRecordData, 230];
 
+  var markerLabel = $('.marker-label');
   var markerHighPosEl = $('.ther-marker.top-marker');
   var markerCurrentPosEl = $('.ther-marker.center-marker');
   var markerLowPosEl = $('.ther-marker.bottom-marker');
 
+  markerLabel.css({"background": "rgba(255,255,255,0)", "z-index": "0"});
   markerHighPosEl.css('left', calcScalePos(highTempNormalData, scaleArray)); 
   markerCurrentPosEl.css('left', calcScalePos(currentTempData, scaleArray)); 
   markerLowPosEl.css('left', calcScalePos(lowTempNormalData, scaleArray)); 
@@ -159,7 +164,7 @@ function dataToString (dataObj) {
 $(function () {
   var thermElement = $('.thermometer');
   thermElement.find('h1.city').hide();
-  thermElement.find('#show-data-contents').hide();
+  // thermElement.find('#show-data-contents').hide();
   var location = new Location();
   var citySelects = $('.city-select .cs-options');
   var resetButton = $('.reset');

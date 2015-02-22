@@ -158,7 +158,7 @@ html {
 
 .container {
   width: 600px;
-  padding: 40px 30px 0; }
+  padding: 10px 10px 0; }
 
 .current {
   margin-top: 50px;
@@ -226,12 +226,28 @@ html {
       height: 130px;
       display: inline-block; }
       .thermometer .thermometer-wrapper .thermometer-scale .marker-label {
+        position: absolute;
+        width: 320px;
         text-align: center;
         padding: 25px 0;
-        font-size: 3em;
+        font-size: 3.01em;
         color: rgba(0, 0, 0, 0.4);
         text-transform: uppercase;
-        font-family: monospace; }
+        font-family: monospace;
+        z-index: 1;
+        background: white;
+        -webkit-transition: background 0.5s, z-index 0.5s;
+        transition: background 0.5s, z-index 0.5s; }
+        .thermometer .thermometer-wrapper .thermometer-scale .marker-label.marker-label-top {
+          top: 0;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px; }
+        .thermometer .thermometer-wrapper .thermometer-scale .marker-label.marker-label-middle {
+          top: 90px; }
+        .thermometer .thermometer-wrapper .thermometer-scale .marker-label.marker-label-bottom {
+          top: 180px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px; }
       .thermometer .thermometer-wrapper .thermometer-scale .ther-marker {
         position: absolute;
         display: inline-block;
@@ -240,10 +256,10 @@ html {
         border: 5px solid #000;
         border-radius: 99999px;
         text-align: center;
-        background: rgba(255, 255, 255, 0.7); }
+        background: white; }
         .thermometer .thermometer-wrapper .thermometer-scale .ther-marker .temp-label {
-          font-size: 2em;
-          padding-top: 25px; }
+          font-size: 1.9em;
+          padding-top: 23px; }
           .thermometer .thermometer-wrapper .thermometer-scale .ther-marker .temp-label .deg {
             font-size: 0.8em;
             vertical-align: top; }
